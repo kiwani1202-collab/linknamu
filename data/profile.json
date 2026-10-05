@@ -1,0 +1,25 @@
+{
+  "name": "김클로",
+  "bio": "세계 최강 바이브코더",
+  "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+  "links": [
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com",
+      "clicks": 0
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com",
+      "clicks": 0
+    },
+    {
+      "id": "blog",
+      "label": "Blog",
+      "url": "https://example.com/blog",
+      "clicks": 0
+    }
+  ]
+}

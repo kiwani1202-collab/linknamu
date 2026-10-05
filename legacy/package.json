@@ -1,0 +1,9 @@
+{
+  "name": "linknamu",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Link page service inspired by the PRD for linknamu.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
