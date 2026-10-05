@@ -6,7 +6,14 @@
 }
 
 body {
-  background: linear-gradient(180deg, #f0fdf4 0%, #ecfeff 100%);
-  color: #0f172a;
+  /* 크림 → 연한 살구색, 위아래로 은은한 빛 번짐을 겹쳐 깊이감을 줌 */
+  background:
+    radial-gradient(60rem 40rem at 15% -10%, rgb(255 255 255 / 0.7), transparent 60%),
+    radial-gradient(50rem 36rem at 110% 110%, rgb(253 186 140 / 0.35), transparent 60%),
+    linear-gradient(170deg, #fffaf2 0%, #fef1e4 50%, #fde2cf 100%);
+  background-attachment: fixed;
+  color: #3b2a20;
   font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+  word-break: keep-all;
 }

@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
     // Unsplash는 ?w=400 같은 쿼리로 크기를 지정하므로 search는 생략(모두 허용)
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com", pathname: "/**" },
+      // placehold.co 기본 응답은 SVG라 next/image 최적화가 막히므로 URL 끝에 /png를 붙여 사용
+      { protocol: "https", hostname: "placehold.co", pathname: "/**" },
     ],
   },
 };
