@@ -5,7 +5,6 @@ export type Link = {
   id: string;
   label: string;
   url: string;
-  clicks: number;
 };
 
 export type Profile = {
@@ -15,7 +14,7 @@ export type Profile = {
   links: Link[];
 };
 
-// 지금은 로컬 JSON 파일에 저장합니다. MongoDB Atlas 연결 시 이 파일만 교체하면 됩니다.
+// 프로필과 링크 목록은 로컬 JSON 파일에서 읽고, 클릭 수는 MongoDB(lib/clicks.ts)에 저장합니다.
 const DATA_FILE = path.join(process.cwd(), "data", "profile.json");
 
 export async function getProfile(): Promise<Profile> {
@@ -23,13 +22,7 @@ export async function getProfile(): Promise<Profile> {
   return JSON.parse(raw) as Profile;
 }
 
-export async function incrementClicks(linkId: string): Promise<Link | null> {
+export async function getLinkIds(): Promise<string[]> {
   const profile = await getProfile();
-  const link = profile.links.find((item) => item.id === linkId);
-
-  if (!link) return null;
-
-  link.clicks += 1;
-  await fs.writeFile(DATA_FILE, JSON.stringify(profile, null, 2), "utf8");
-  return link;
+  return profile.links.map((link) => link.id);
 }

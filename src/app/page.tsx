@@ -1,5 +1,5 @@
 import { connection } from "next/server";
-import LinkCard from "@/components/LinkCard";
+import LinkList from "@/components/LinkList";
 import ProfileHeader from "@/components/ProfileHeader";
 import { getProfile } from "@/lib/profile";
 
@@ -17,11 +17,7 @@ export default async function Home() {
           avatar={profile.avatar}
         />
 
-        <nav aria-label="링크 목록" className="mt-10 flex flex-col gap-4">
-          {profile.links.map((link) => (
-            <LinkCard key={link.id} id={link.id} label={link.label} url={link.url} />
-          ))}
-        </nav>
+        <LinkList links={profile.links} />
       </div>
     </main>
   );
